@@ -18,7 +18,11 @@ const socialMediaLinks = [
 export default function Contact(){
     return <main className={styles.main}>
         <h1>Contact Me</h1>
-        <p>Blah blah blah, here's some shit about contacting me. You can find me using my email and social media links below.</p>
+        <p>
+            I've built all kinds of things for people all over the world.
+            I'm currently in the market for new projects and am open to new roles.
+            You can find me using my email and social media links below.
+        </p>
         <ul>
             {
                 socialMediaLinks.map((smlink)=>{
