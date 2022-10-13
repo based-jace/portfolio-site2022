@@ -9,11 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@octokit/core": "^4.0.5",
+    "clsx": "^1.2.1",
+    "framer-motion": "^7.5.0",
+    "lodash": "^4.17.21",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sass": "^1.55.0"
   },
   "devDependencies": {
+    "@types/node": "18.8.2",
+    "@types/react": "18.0.21",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1"
   }

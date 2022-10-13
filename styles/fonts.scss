@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Super Plumber Bros";
+  src: url("/super-plumber-bros.ttf");
+}
+@font-face {
+  font-family: "TVCD";
+  src: url("/crt.ttf");
+}
+
+$mario-font: "Super Plumber Bros", "Ubuntu Mono", "Consolas", "Courier", monospace;
+$crt-font: "TVCD", "Ubuntu Mono", "Consolas", "Courier", monospace;

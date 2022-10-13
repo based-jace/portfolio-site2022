@@ -1,0 +1,105 @@
+@import "fonts";
+@import "colors";
+
+.main{
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  h1{
+    margin-bottom: 28px;
+    text-align: center;
+    font-family: $mario-font;
+    text-transform: lowercase;
+    font-size: 60px;
+    font-weight: normal;
+    color: $nes-green;
+  }
+  .portfolioContainer{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    height: calc(100% - 200px);
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: black;
+    border: 4px solid white;
+    border-radius: 16px;
+    .projectView{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, min-content) auto;
+      align-items: flex-start;
+      justify-items: center;
+      .imageContainer{
+        width: 300px;
+        margin: 40px 0 20px;
+        box-sizing: border-box;
+        border: 4px white solid;
+        border-radius: 8px;
+        overflow: hidden;
+        img{
+          width: 100%;
+        }
+      }
+      h1{
+        margin: 0;
+        font-size: 36px;
+      }
+      p{
+        margin: 16px 48px;
+        text-align: center;
+      }
+      .githubLink, .blogPostLink{
+        margin: 10px 0 14px;
+        color: $nes-blue;
+        cursor: pointer;
+      }
+    }
+    .projectList{
+      //background: $nes-blue;
+      border-left: 4px solid white;
+      overflow-y: scroll;
+      h1{
+        margin: 18px 0 14px;
+        font-size: 42px;
+      }
+      ul{
+        margin: 0;
+        padding: 0;
+        li{
+          $border-style: 4px white solid;
+          list-style: none;
+          &:first-child{
+            border-top: $border-style;
+          }
+          button {
+            display: grid;
+            grid-template-columns: auto min-content;
+            align-items: center;
+            height: 50px;
+            width: 100%;
+            border-bottom: $border-style;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover{
+              background: $nes-light-purple;
+            }
+            &:active{
+              background: $nes-dark-purple;
+            }
+            &.selected{
+              background: $nes-fuchsia;
+              color: white;
+            }
+            .projectTitle {
+              margin-left: 10px;
+            }
+            .projectStars {
+              //position: ;
+            }
+          }
+        }
+      }
+    }
+  }
+}

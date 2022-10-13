@@ -1,7 +1,73 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
+import '../styles/vhs.scss'
+import NavBar from "../components/NavBar";
+import {ScreenEffect} from "../utils";
+import {useCallback, useState} from "react";
+import Footer from "../components/Footer";
+import Transition from "../components/Transition";
+import MuteIcon from "../components/MuteIcon";
+import Toolbar from "../components/Toolbar";
+import Head from "next/head";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const config = {
+    effects: {
+        vignette: {
+            enabled: true
+        },
+        scanlines: {
+            enabled: true
+        },
+        vcr: {
+            enabled: true,
+            options: {
+                opacity: 0.1,
+                miny: 220,
+                miny2: 220,
+                num: 20,
+                fps: 60
+            }
+        },
+        wobbley: {
+            enabled: true
+        },
+        snow: {
+            enabled: true,
+            options: {
+                opacity: 0.1
+            }
+        }
+    }
+};
+
+function MyApp({Component, pageProps}) {
+    const onRefChange = useCallback(node =>{
+        if (node !== null){
+            const screen = new ScreenEffect(node, {});
+            for (const prop in config.effects) {
+                if (config.effects[prop].enabled) {
+                    screen.add(prop, config.effects[prop].options);
+                }
+            }
+        }
+        // Else it's not mounted
+    }, []);
+    const [muted, setMuted] = useState(true);
+
+    return <>
+        <Head>
+            <title>Jace's Website</title>
+            <link rel="icon" href="/square-coding.gif" type="image/gif" />
+        </Head>
+        <NavBar/>
+        <div id="screen" ref={onRefChange}>
+            <MuteIcon muted={muted}/>
+            <Transition>
+                <Component {...pageProps} />
+            </Transition>
+        </div>
+        <Toolbar muted={muted} setMuted={setMuted}/>
+        <Footer/>
+    </>
 }
 
-export default MyApp
+export default MyApp;
