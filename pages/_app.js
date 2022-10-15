@@ -20,11 +20,11 @@ const config = {
         vcr: {
             enabled: true,
             options: {
-                opacity: 0.1,
+                opacity: 0.01,
                 miny: 220,
-                miny2: 220,
-                num: 20,
-                fps: 60
+                miny2: 320,
+                num: 10,
+                fps: 10
             }
         },
         wobbley: {
@@ -58,7 +58,7 @@ function MyApp({Component, pageProps}) {
             <title>Jace's Website</title>
             <link rel="icon" href="/square-coding.gif" type="image/gif" />
         </Head>
-        <NavBar/>
+        <NavBar muted={muted} setMuted={setMuted}/>
         <div id="screen" ref={onRefChange}>
             <MuteIcon muted={muted}/>
             <Transition>

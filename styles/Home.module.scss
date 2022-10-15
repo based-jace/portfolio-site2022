@@ -1,5 +1,6 @@
 @import "fonts";
 @import "colors";
+@import "measurements";
 
 .container {
   padding: 0 2rem;
@@ -40,6 +41,9 @@
     //-webkit-text-stroke: 0.4px white;
     text-decoration: underline;
   }
+}
+.largeBio{
+  display: none;
 }
 
 .skills, .technologies{
@@ -140,9 +144,65 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+@media screen and (max-width: $large-max-width){
+  .main{
+    grid-template-columns: 200px 1fr 200px 1fr 200px;
+    grid-template-rows: 320px auto;
+
+    h1{
+      font-size: 36px;
+    }
+
+    .profile-pic-cont{
+      width: 150px;
+    }
+
+    .bio{
+      grid-column: 2 / -1;
+
+      & > *{
+        margin: 7px;
+      }
+
+      &.extraLargeBio{
+        display: none;
+      }
+      &.largeBio{
+        display: block;
+      }
+    }
+
+    .technologies, .skills{
+      h1{
+        font-size: 24px;
+        margin-bottom: -12px;
+      }
+    }
+
+    .skills{
+      grid-column: 1 / 3;
+    }
+    .technologies{
+      grid-column: 4 / -1;
+      ul{
+        height: 180px;
+        overflow-y: scroll;
+      }
+    }
+
+    .nes-animation{
+      align-self: center;
+    }
+  }
+}
+
+@media (max-width: $small-max-width) {
+  .main{
+    display: block;
+    //grid-template-columns: 1fr;
+
+    .profile-pic-cont{
+      display: none;
+    }
   }
 }

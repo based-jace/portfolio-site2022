@@ -32,7 +32,7 @@ export default function Home() {
             <div className={styles["profile-pic-cont"]}>
                 <Image src="/jace-thumbs-up1.jpg" alt="an image of me" layout='responsive' width={2448} height={3264}/>
             </div>
-            <div className={styles.bio}>
+            <div className={`${styles.bio} ${styles.extraLargeBio}`}>
                 <h1>Yo, Dawg</h1>
                 <p>
                     I'm Jace. I'm a <Emphasis>Software Engineer</Emphasis> with <Emphasis>5 years of experience</Emphasis> designing and implementing
@@ -48,6 +48,27 @@ export default function Home() {
                 </p>
                 <p>
                     As a contractor, I've built many projects for different people across the globe.
+                    See my <Link href="/portfolio">portfolio</Link> for more details.
+                </p>
+                <p>
+                    <Link href="/contact">Contact</Link> me if you have a project in mind.
+                </p>
+            </div>
+            <div className={`${styles.bio} ${styles.largeBio}`}>
+                <h1>Yo, Dawg</h1>
+                <p>
+                    I'm Jace. I'm a <Emphasis>Software Engineer</Emphasis> with <Emphasis>5 years of experience</Emphasis> designing and implementing
+                    web applications and other software using <Emphasis>Python</Emphasis> and <Emphasis>React</Emphasis>.
+                    I specialize in building projects from the ground up with whatever features you need them to have.
+                </p>
+                <p>
+                    Previously, I was a <Emphasis>Full-Stack Software Engineer</Emphasis> working at Ware --
+                    a <Emphasis>robotics</Emphasis> startup that performs warehouse inventory management using drones.
+                    For Ware, I built much of the internal tooling, including a webapp the entire team
+                    uses to manage customer data.
+                </p>
+                <p>
+                    As a contractor, I've built many projects.
                     See my <Link href="/portfolio">portfolio</Link> for more details.
                 </p>
                 <p>

@@ -1,3 +1,5 @@
+@import 'measurements';
+
 body {
   margin: 0;
   width: 100vw;
@@ -20,7 +22,7 @@ canvas {
 
   &.snow {
     background-color: #aaa;
-    opacity: 0.2;
+    opacity: 0.15;
   }
 }
 
@@ -62,8 +64,8 @@ $screen-background: #121010;
 }
 
 .screen-container {
-    width: 1200px;
-    height: 800px;
+  width: 1200px;
+  height: 800px;
   overflow: hidden;
   position: relative;
   pointer-events: none;
@@ -97,8 +99,8 @@ $screen-background: #121010;
 .vignette {
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/crt.png);
   @include fill;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   z-index: 10000;
 }
 .scanlines {
@@ -317,4 +319,29 @@ $screen-background: #121010;
 
 .dg.ac {
   z-index: 10000 !important;
+}
+
+@media screen and (max-width: $large-max-width){
+  .screen-container {
+    width: $large-crt-width;
+    height: $large-crt-height;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+  }
+  .scanlines{
+    //display: none;
+  }
+  .vignette{
+    //display: none;
+  }
+}
+
+@media screen and (max-width: $small-max-width) {
+  .screen-container{
+    width: 100vw;
+    height: calc(100vh - 88px);
+
+    //height: $small-crt-height;
+  }
 }

@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 import clsx from "clsx";
+import MuteButton from "./MuteButton";
 
 export default function Toolbar({muted, setMuted}){
     const audioRef = useRef(null);
@@ -18,14 +19,7 @@ export default function Toolbar({muted, setMuted}){
             <source src="demo-website-tune-wip.wav" type="audio/wav"/>
         </audio>
         <div className="tool-container">
-            <button
-                className={clsx("mute-button", {
-                    "muted": muted
-                })}
-                onClick={muteClick}
-            >
-                Mute
-            </button>
+            <MuteButton muted={muted} muteClick={muteClick}/>
         </div>
     </div>
 }

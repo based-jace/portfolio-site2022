@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {useRouter} from "next/router";
 import clsx from "clsx";
+import MuteButton from "./MuteButton";
 
 const routes = [
     {
@@ -20,8 +21,12 @@ const routes = [
     }
 ]
 
-export default function NavBar(){
+export default function NavBar({muted, setMuted}){
     const router = useRouter();
+
+    function muteClick(){
+        setMuted(!muted);
+    }
 
     return <nav>
         {routes.map((route)=>{
@@ -35,5 +40,6 @@ export default function NavBar(){
                 </button>
             </Link>
         })}
+        <MuteButton muted={muted} muteClick={muteClick}/>
     </nav>
 }
