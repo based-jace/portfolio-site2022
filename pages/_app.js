@@ -8,6 +8,7 @@ import Transition from "../components/Transition";
 import MuteIcon from "../components/MuteIcon";
 import Toolbar from "../components/Toolbar";
 import Head from "next/head";
+import Script from "next/script";
 
 const config = {
     effects: {
@@ -57,6 +58,10 @@ function MyApp({Component, pageProps}) {
         <Head>
             <title>Jace's Website</title>
             <link rel="icon" href="/square-coding.gif" type="image/gif" />
+            <link
+                 rel="stylesheet"
+                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+           />
         </Head>
         <NavBar muted={muted} setMuted={setMuted}/>
         <div id="screen" ref={onRefChange}>
@@ -66,7 +71,7 @@ function MyApp({Component, pageProps}) {
             </Transition>
         </div>
         <Toolbar muted={muted} setMuted={setMuted}/>
-        <Footer/>
+        <Footer className="mainFooter"/>
     </>
 }
 

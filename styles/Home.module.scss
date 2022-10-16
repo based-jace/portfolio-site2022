@@ -198,11 +198,33 @@
 
 @media (max-width: $small-max-width) {
   .main{
-    display: block;
-    //grid-template-columns: 1fr;
+    grid-template-columns: auto;
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    height: 100%;
+    overflow-y: auto;
+    pointer-events: auto;
 
     .profile-pic-cont{
       display: none;
+    }
+    .nes-animation{
+      grid-row: 2 / 3;
+      margin: 20px 0;
+    }
+    .bio, .skills, .technologies{
+      grid-column: 1 / -1;
+      ul{
+        padding: 0;
+      }
+    }
+    .technologies{
+      ul{
+        height: auto;
+      }
+    }
+    ul{
+      text-align: center;
     }
   }
 }

@@ -323,25 +323,14 @@ $screen-background: #121010;
 
 @media screen and (max-width: $large-max-width){
   .screen-container {
-    width: $large-crt-width;
-    height: $large-crt-height;
-    overflow: hidden;
-    position: relative;
-    pointer-events: none;
-  }
-  .scanlines{
-    //display: none;
-  }
-  .vignette{
-    //display: none;
+    width: $medium-crt-width;
+    height: $medium-crt-height;
   }
 }
 
 @media screen and (max-width: $small-max-width) {
   .screen-container{
     width: 100vw;
-    height: calc(100vh - 88px);
-
-    //height: $small-crt-height;
+    height: calc(100vh - 60px);
   }
 }

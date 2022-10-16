@@ -7,6 +7,10 @@ export default function MuteButton({muted, muteClick}){
         })}
         onClick={muteClick}
     >
-        Mute
+        {
+            muted ?
+                <i className='fas fa-volume-mute'/> :
+                <i className='fas fa-volume-up'/>
+        }
     </button>
 }

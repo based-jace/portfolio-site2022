@@ -7,17 +7,20 @@ const routes = [
     {
         route: "/",
         className: "home",
-        text: "Home"
+        text: "Home",
+        mobileIcon: <i className="fas fa-home"></i>
     },
     {
         route: "/portfolio",
         className: "portfolio",
-        text: "Portfolio"
+        text: "Portfolio",
+        mobileIcon: <i className="fas fa-briefcase"></i>
     },
     {
         route: "/contact",
         className: "contact",
-        text: "Contact"
+        text: "Contact",
+        mobileIcon: <i className="fas fa-user"></i>
     }
 ]
 
@@ -36,7 +39,8 @@ export default function NavBar({muted, setMuted}){
                         selected: router.pathname === route.route
                     }
                 )}>
-                    {route.text}
+                    <span className="text">{route.text}</span>
+                    <span className="mobileIcon">{route.mobileIcon}</span>
                 </button>
             </Link>
         })}

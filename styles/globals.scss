@@ -14,6 +14,7 @@ body {
   margin: 0;
   background: black;
   color: white;
+  overflow: hidden;
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -67,6 +68,10 @@ nav{
     text-transform: lowercase;
     font-size: 32px;
     cursor: pointer;
+    .mobileIcon{
+      display: none;
+    }
+
     &.home{
       &:hover, &.selected{
         background: $rgb-red;
@@ -101,8 +106,8 @@ nav{
   .tool-container{
     height: 800px;
     .mute-button{
-      height: 80px;
-      width: 140px;
+      height: 100px;
+      width: 100px;
       margin: 20px 0;
       font-size: 28px;
     }
@@ -110,13 +115,14 @@ nav{
 }
 
 .mute-button {
-  font-size: 20px;
+  font-size: 28px;
   text-align: center;
   background: #343434;
+  box-sizing: border-box;
   border: 4px white solid;
-  border-radius: 8px;
+  border-radius: 80px;
   cursor: pointer;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   font-weight: bold;
   font-family: $crt-font;
 
@@ -156,6 +162,11 @@ footer {
   align-items: center;
   width: 100%;
   margin: 14px 0;
+
+  &.mobileFooter{
+    display: none;
+  }
+
   div{
     display: flex;
     justify-content: center;
@@ -212,6 +223,42 @@ footer a {
 
 @media screen and (max-width: $small-max-width){
   nav{
+    position: absolute;
+    height: 60px;
+    width: 100vw;
+    bottom: 0;
+    margin: 0;
+
+    button{
+      width: 25%;
+      margin: 0;
+      box-sizing: border-box;
+
+      .text{
+        display: none;
+      }
+      .mobileIcon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &.mute-button{
+        height: 60px;
+      }
+    }
+  }
+
+  .mute-icon{
+    position: absolute;
+    right: 20px;
+    z-index: 10;
+  }
+
+  .mainFooter{
     display: none;
+  }
+  footer.mobileFooter{
+    display: flex;
   }
 }

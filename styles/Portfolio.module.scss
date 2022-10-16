@@ -1,10 +1,13 @@
 @import "fonts";
 @import "colors";
+@import "measurements";
 
 .main{
+  $border-style: 4px white solid;
+
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  width: $large-crt-width;
   h1{
     margin-bottom: 28px;
     text-align: center;
@@ -22,7 +25,7 @@
     margin: 0 auto;
     overflow: hidden;
     background: black;
-    border: 4px solid white;
+    border: $border-style;
     border-radius: 16px;
     .projectView{
       display: grid;
@@ -34,7 +37,7 @@
         width: 300px;
         margin: 40px 0 20px;
         box-sizing: border-box;
-        border: 4px white solid;
+        border: $border-style;
         border-radius: 8px;
         overflow: hidden;
         img{
@@ -57,21 +60,23 @@
     }
     .projectList{
       //background: $nes-blue;
-      border-left: 4px solid white;
-      overflow-y: scroll;
+      height: 100%;
+      max-height: 100%;
+      border-left: $border-style;
+      overflow-y: hidden;
       h1{
-        margin: 18px 0 14px;
+        margin: 0;
+        padding: 18px 0 14px;
         font-size: 42px;
+        border-bottom: $border-style;
       }
       ul{
+        //height: 100%;
         margin: 0;
         padding: 0;
+        overflow: scroll;
         li{
-          $border-style: 4px white solid;
           list-style: none;
-          &:first-child{
-            border-top: $border-style;
-          }
           button {
             display: grid;
             grid-template-columns: auto min-content;
@@ -92,12 +97,42 @@
               color: white;
             }
             .projectTitle {
-              margin-left: 10px;
+              margin: 0 10px;
             }
             .projectStars {
               //position: ;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $large-max-width){
+  .main{
+    width: $medium-crt-width;
+    .portfolioContainer{
+      .projectView{
+        max-height: 100%;
+        overflow-y: scroll;
+
+        .imageContainer{
+          width: 200px;
+          margin-top: 20px;
+        }
+
+        h1{
+          margin: 0 10px;
+          font-size: 28px;
+        }
+        p{
+          margin: 0 10px;
+        }
+      }
+      .projectList{
+        ul{
+          max-height: calc(100% - 75px);
         }
       }
     }

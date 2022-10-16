@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-export default function Footer() {
-    return <footer>
+export default function Footer({className = ""}) {
+    return <footer className={className}>
         <div className="social-media-links">
             <a href="https://linkedin.com/in/jace-medlin" target="_blank" rel="noreferrer">
                 <button>

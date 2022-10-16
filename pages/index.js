@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 const skills = [
     "Full-Stack Engineering",
@@ -100,6 +101,7 @@ export default function Home() {
                     })}
                 </ul>
             </div>
+            <Footer className="mobileFooter"/>
         </main>
     )
 }

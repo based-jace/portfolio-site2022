@@ -1,10 +1,11 @@
 @import "fonts";
 @import "colors";
+@import "measurements";
 
 .main {
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  width: $large-crt-width;
 
   h1 {
     margin-bottom: 28px;
@@ -24,6 +25,7 @@
   }
 
   ul{
+    padding: 0;
     margin: 40px auto;
     flex-direction: column;
     align-items: center;
@@ -36,6 +38,21 @@
       a{
         color: $nes-blue;
       }
+    }
+  }
+}
+
+@media screen and (max-width: $large-max-width){
+  .main{
+    width: $medium-crt-width;
+  }
+}
+
+@media screen and (max-width: $small-max-width) {
+  .main{
+    width: 100vw;
+    p{
+      width: unset;
     }
   }
 }
