@@ -1,4 +1,5 @@
 import styles from "../styles/Contact.module.scss";
+import Footer from "../components/Footer";
 
 const socialMediaLinks = [
     {
@@ -33,5 +34,6 @@ export default function Contact(){
                 })
             }
         </ul>
+        <Footer className="mobileFooter"/>
     </main>
 }

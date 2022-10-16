@@ -8,7 +8,6 @@ import Transition from "../components/Transition";
 import MuteIcon from "../components/MuteIcon";
 import Toolbar from "../components/Toolbar";
 import Head from "next/head";
-import Script from "next/script";
 
 const config = {
     effects: {

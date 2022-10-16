@@ -4,10 +4,10 @@
 
 .main{
   $border-style: 4px white solid;
-
   display: flex;
   flex-direction: column;
   width: $large-crt-width;
+
   h1{
     margin-bottom: 28px;
     text-align: center;
@@ -17,6 +17,7 @@
     font-weight: normal;
     color: $nes-green;
   }
+
   .portfolioContainer{
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -27,12 +28,14 @@
     background: black;
     border: $border-style;
     border-radius: 16px;
+
     .projectView{
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(4, min-content) auto;
       align-items: flex-start;
       justify-items: center;
+
       .imageContainer{
         width: 300px;
         margin: 40px 0 20px;
@@ -131,8 +134,57 @@
         }
       }
       .projectList{
+        h1{
+          font-size: 32px;
+        }
         ul{
-          max-height: calc(100% - 75px);
+          max-height: calc(100% - 71px);  // 100% - the header's total height
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $small-max-width){
+  .main{
+    width: 100vw;
+
+    h1{
+      font-size: 48px;
+      margin: 10px;
+    }
+
+    .portfolioContainer{
+      grid-template-columns: auto;
+      grid-template-rows: 2fr 1.5fr;
+      height: 75vh;
+      width: 100%;
+
+      .projectView{
+        //align-items: flex-start;
+
+        a{
+          width: 100%;
+          text-align: center;
+        }
+        .imageContainer{
+          width: 100%;
+          margin: 0;
+          border: none;
+        }
+      }
+
+      .projectList{
+        border-top: 4px white solid;
+        border-left: none;
+
+        h1{
+          font-size: 30px;
+          padding: 8px;
+        }
+
+        ul{
+          max-height: calc(100% - 46px);  // 100% - the header's total height
         }
       }
     }

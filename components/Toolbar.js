@@ -13,9 +13,11 @@ export default function Toolbar({muted, setMuted}){
 
     function muteClick(){
         setMuted(!muted);
+        audioRef.current.play();  // Because Chrome sucks
     }
     return <div className="toolbar">
-        <audio loop={true} autoPlay muted={muted} ref={audioRef}>
+        <iframe src="https://olafwempe.com/mp3/silence/silence.mp3" allow="autoplay" id="audio" style={{display: "none"}}></iframe>
+        <audio loop={true} muted={muted} autoPlay={true} ref={audioRef}>
             <source src="demo-website-tune-wip.wav" type="audio/wav"/>
         </audio>
         <div className="tool-container">

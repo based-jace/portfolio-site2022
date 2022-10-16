@@ -7,6 +7,8 @@ import styles from '../styles/Portfolio.module.scss';
 import Image from "next/image";
 import clsx from "clsx";
 
+import Footer from "../components/Footer";
+
 
 const githubOwner = 'based-jace';
 
