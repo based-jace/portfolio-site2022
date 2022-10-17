@@ -77,9 +77,11 @@
         //height: 100%;
         margin: 0;
         padding: 0;
-        overflow: scroll;
+        overflow: auto;
+
         li{
           list-style: none;
+
           button {
             display: grid;
             grid-template-columns: auto min-content;
@@ -118,7 +120,7 @@
     .portfolioContainer{
       .projectView{
         max-height: 100%;
-        overflow-y: scroll;
+        overflow-y: auto;
 
         .imageContainer{
           width: 200px;
@@ -139,6 +141,13 @@
         }
         ul{
           max-height: calc(100% - 71px);  // 100% - the header's total height
+          li{
+            &:last-child{
+              button{
+                border-bottom: none;
+              }
+            }
+          }
         }
       }
     }
