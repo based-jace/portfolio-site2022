@@ -78,6 +78,13 @@ nav{
     text-transform: lowercase;
     font-size: 32px;
     cursor: pointer;
+
+    .text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .mobileIcon{
       display: none;
     }
