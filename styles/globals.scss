@@ -67,6 +67,9 @@ nav{
   width: 100%;
   margin: 15px 0;
   button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 180px;
     margin: 0 24px;
     border: 2px solid white;

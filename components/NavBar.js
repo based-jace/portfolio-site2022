@@ -39,7 +39,7 @@ export default function NavBar({muted, setMuted}){
                         selected: router.pathname === route.route
                     }
                 )}>
-                    <span className="text">{route.text}</span>
+                    {route.text}
                     <span className="mobileIcon">{route.mobileIcon}</span>
                 </button>
             </Link>
