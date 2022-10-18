@@ -108,7 +108,12 @@ export default function Portfolio({_githubProjects = []}){
             <div className={styles.projectView}>
                 {!_.isNil(selectedProject) ?
                     <>
-                        <a href={createGithubRepoLink(selectedProject)} target="_blank" rel="noreferrer">
+                        <a
+                            href={createGithubRepoLink(selectedProject)}
+                            target="_blank"
+                            rel="noreferrer"
+                            tabIndex={-1}
+                        >
                             <div className={styles.imageContainer}>
                                 <Image
                                     src={selectedProject.preview}

@@ -8,6 +8,14 @@ button{
   all: unset
 }
 
+a, button{
+  &:focus-visible{
+    outline: none;
+    border: 8px $nes-teal solid !important;
+    font-size: 30px;
+  }
+}
+
 html,
 body {
   padding: 0;
