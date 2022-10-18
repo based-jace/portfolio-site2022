@@ -38,6 +38,9 @@
       a{
         color: $nes-blue;
       }
+      .icon{
+        display: none;
+      }
     }
   }
 }
@@ -53,6 +56,29 @@
     width: 100vw;
     p{
       width: unset;
+    }
+    ul{
+      li{
+        align-items: center;
+        span{
+          //display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .link{
+          height: 20px;
+          margin-bottom: 10px;
+        }
+
+        .text{
+          display: none;
+        }
+        .icon{
+          display: block;
+          width: 60px;
+        }
+      }
     }
   }
 }
