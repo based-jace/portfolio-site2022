@@ -47,7 +47,7 @@ export default function Home() {
           user-centric solutions with measurable impacts.
         </p>
         <p>
-          Previously at Ware, as a <Emphasis>Full-Stack Developer</Emphasis>, I was instrumental in increasing task completion time from 2 days to 2 minutes through well-executed app design and implementation.
+          Previously at Ware, as a <Emphasis>Full-Stack Developer</Emphasis>, I was instrumental in decreasing task completion time from 2 days to 2 minutes through well-executed app design and implementation.
         </p>
         <p>
           For a closer look at my professional narrative and the value I bring, explore my <Link
