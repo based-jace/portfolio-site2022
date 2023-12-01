@@ -25,7 +25,7 @@ export default function Footer({className = ""}) {
             </a>
         </div>
         <div>
-            © Jace Medlin 2022
+            © Jace Medlin 2022-{new Date().getFullYear()}
         </div>
     </footer>
 }
